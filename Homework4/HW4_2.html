@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const num = prompt("Please enter 3 digits number:");
+
+        if (num[0] == num[1] && num[0] == num[2]) {
+            alert('All digits are the same')
+        }
+        else if (num[0] == num[1] || num[0] == num[2] || num[1] == num[2]){
+            alert('Two digits are the same')
+        }
+        else {
+            alert('All digits are different')
+        };
+        
+    </script>
+</body>
+</html>
