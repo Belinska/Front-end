@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let userBirth = prompt('What is your year of birth?');
+        let userCityLive = prompt('What city do you live in?');
+        let userSport = prompt('What is your favorite sport?');
+
+        let currentYear = new Date().getFullYear();
+        let message = ('Your age: ' + (currentYear - userBirth)) + '\n';
+
+        if (userCityLive == 'Kyiv' || userCityLive == 'Washington' || userCityLive == 'London') {
+            message += ('You live in the capital of: ' + userCityLive) + '\n';
+        } else {
+            message += ('You live in the city: ' + userCityLive) + '\n';
+        }
+
+        if (userSport == 'Football') {
+            message += ('Cool! you want to be like Leo Messi?') + '\n';
+        } else if (userSport == 'Basketball') {
+            message += ('Cool! you want to be like LeBron James?') + '\n';
+        } else if (userSport == 'Tennis') {
+            message += ('Cool! you want to be like Serena Williams?') + '\n';
+        } else {
+            message += ('Your favorite sport is: ' + userSport);
+        }
+        alert(message);
+    </script>
+</body>
+</html>
