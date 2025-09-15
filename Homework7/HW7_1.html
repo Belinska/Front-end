@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input = prompt('Enter a exit row:');
+        let symbols = prompt('Enter a symbols to delete:')
+                        .split('')
+                        .filter(x => x.trim() !== '');
+
+        function deleteSymbols(input,symbols){
+            let result = '';
+            for(let i = 0; i < input.length; i++){
+                if(!symbols.includes(input[i])){
+                    result += input[i];
+                }
+            }
+            return result;
+        }
+
+        let output = deleteSymbols(input, symbols);
+        alert(output);
+
+    </script>
+</body>
+</html>
