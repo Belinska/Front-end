@@ -10,12 +10,12 @@
         let input = prompt('Enter a exit row:');
         let symbols = prompt('Enter a symbols to delete:')
                         .split('')
-                        .filter(x => x.trim() !== '');
+                        .filter(s => s.trim() !== '');
 
-        function deleteSymbols(input,symbols){
+        function deleteSymbols(input, symbolsToDelete){
             let result = '';
             for(let i = 0; i < input.length; i++){
-                if(!symbols.includes(input[i])){
+                if(!symbolsToDelete.includes(input[i])){
                     result += input[i];
                 }
             }
