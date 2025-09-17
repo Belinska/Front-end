@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function parameter() {
+        let param = 0;
+        return function displayParameter(x) {
+          console.log((param += x));
+        };
+      }
+      let innerParam = parameter();
+      innerParam(4);
+      innerParam(6);
+      innerParam(10);
+      innerParam(7);
+    </script>
+  </body>
+</html>
