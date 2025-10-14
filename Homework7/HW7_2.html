@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, false, "hello", null, undefined, 123];
+
+      function getAverageOfNumbers(arr) {
+        let sum = 0;
+        let count = 0;
+
+        for (let el of arr) {
+          if (typeof el === "number") {
+            sum += el;
+            count++;
+          }
+        }
+        if (count === 0) {
+          return 0;
+        } else {
+          return sum / count;
+        }
+      }
+      console.log(getAverageOfNumbers(arr));
+    </script>
+  </body>
+</html>
