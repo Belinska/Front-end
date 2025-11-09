@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Document</title>
+  </head>
+  <body>
+    <script>
+      function Student(name, surname, yearOfBirth, grades, attendance) {
+        this.name = name;
+        this.surname = surname;
+        this.yearOfBirth = yearOfBirth;
+        this.grades = grades;
+        this.attendance = new Array(25).fill(null);
+        this.getAge = function () {
+          const currentYear = new Date().getFullYear();
+          return currentYear - this.yearOfBirth;
+        };
+        this.getAverageGrade = function () {
+          const sum = this.grades.reduce((a, b) => a + b, 0);
+          return sum / this.grades.length;
+        };
+        this.attendanceCount = 0;
+        this.present = function () {
+          for (let i = 0; i < this.attendance.length; i++) {
+            if (this.attendanceCount === 25) return;
+            if (this.attendance[i] === null) {
+              this.attendance[i] = true;
+              this.attendanceCount++;
+              break;
+            }
+          }
+        };
+        this.absent = function () {
+          if (this.attendanceCount === 25) return;
+          for (let i = 0; i < this.attendance.length; i++) {
+            if (this.attendance[i] === null) {
+              this.attendance[i] = false;
+              this.attendanceCount++;
+              break;
+            }
+          }
+        };
+        this.summary = function () {
+          const avgGrade = this.getAverageGrade();
+          const presentCount = this.attendance.filter(
+            (day) => day === true
+          ).length;
+          const attendanceRate = presentCount / this.attendanceCount;
+          if (avgGrade > 90 && attendanceRate > 0.9) {
+            return "Молодець!";
+          } else if (avgGrade > 90 || attendanceRate > 0.9) {
+            return "Добре, але можна краще";
+          } else {
+            return "Редиска!";
+          }
+        };
+      }
+      const student1 = new Student(
+        "Іван",
+        "Іванов",
+        2000,
+        [95, 88, 92, 85, 90]
+      );
+      const student2 = new Student(
+        "Аліса",
+        "Петрова",
+        1999,
+        [75, 80, 78, 82, 77]
+      );
+
+      student1.present();
+      student1.present();
+      student1.present();
+
+      student2.absent();
+      student2.present();
+      student2.absent();
+
+      console.log(
+        `${student1.name} ${student1.surname}, Вік: ${student1.getAge()}`
+      );
+      console.log(`Середній бал: ${student1.getAverageGrade()}`);
+      console.log(`Підсумок: ${student1.summary()}`);
+
+      console.log(
+        `${student2.name} ${student2.surname}, Вік: ${student2.getAge()}`
+      );
+      console.log(`Середній бал: ${student2.getAverageGrade()}`);
+      console.log(`Підсумок: ${student2.summary()}`);
+    </script>
+  </body>
+</html>
