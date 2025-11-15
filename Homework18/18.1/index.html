@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+  </head>
+  <body>
+    <div>
+      <h1>Timer</h1>
+      <p><span id="seconds">0</span></p>
+    </div>
+    <script>
+      const secondsDisplay = document.getElementById("seconds");
+      let time = 85;
+      minutes = Math.floor(time / 60);
+      seconds = time % 60;
+      if (minutes < 10) minutes = "0" + minutes;
+      if (seconds < 10) seconds = "0" + seconds;
+      secondsDisplay.textContent = `${minutes}:${seconds}`;
+      const intervalId = setInterval(() => {
+        time--;
+        minutes = Math.floor(time / 60);
+        seconds = time % 60;
+        if (minutes < 10) minutes = "0" + minutes;
+        if (seconds < 10) seconds = "0" + seconds;
+        secondsDisplay.textContent = `${minutes}:${seconds}`;
+        if (time <= 0) {
+          clearInterval(intervalId);
+          alert("Time's up!");
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
