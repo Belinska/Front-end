@@ -2,5 +2,9 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5"
   }
 }
