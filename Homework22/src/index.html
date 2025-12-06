@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Webpack DEV</title>
+  </head>
+  <body class="p-4">
+    <div class="container">
+      <h5 class="mb-3">Ваше завдання</h5>
+      <ul id="tasks" class="list-group mb-3"></ul>
+      <div class="mb-4">
+        <div class="input-group">
+          <input id="newTask" class="form-control" />
+          <button id="addBtn" class="btn btn-outline-primary">Додати</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="taskModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Ваше завдання</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Закрити"
+            ></button>
+          </div>
+          <div class="modal-body" id="taskModalBody">Текст завдання</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary btn-close-modal"
+              data-bs-dismiss="modal"
+            >
+              Закрити
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
